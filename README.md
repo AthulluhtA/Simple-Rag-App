@@ -29,8 +29,8 @@ Built with LangChain, Groq (Llama 3.1 8B), Google Generative AI Embeddings, Chro
 
 1. Clone the repo
 ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/AthulluhtA/Simple-Rag-App.git
+   cd Simple-Rag_App
 ```
 
 2. Create a `.env` file
