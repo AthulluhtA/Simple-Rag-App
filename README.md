@@ -60,9 +60,11 @@ Built with LangChain, Groq (Llama 3.1 8B), Google Generative AI Embeddings, Chro
 ```
 
 ## Project Structure
+```
 ├── ingest.py        # PDF loading, chunking, embedding
 ├── retrieve.py      # Vector DB retrieval tool
 ├── agent.py         # LLM agent setup
 ├── app.py           # Streamlit UI
 ├── Dockerfile
 └── requirements.txt
+```
