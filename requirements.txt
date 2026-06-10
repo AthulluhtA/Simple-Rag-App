@@ -1,0 +1,10 @@
+python-dotenv
+ipykernel
+langchain
+langchain-chroma
+langchain-google-genai
+langchain-groq
+langchain-text-splitters
+pypdf
+streamlit
+protobuf==3.20.3
