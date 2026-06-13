@@ -4,6 +4,8 @@ from agent import run_query
 from ingest import ingest
 from ingest import vector_db
 import hashlib
+import retrieve
+
 st.title("Research Paper Assistant")
 
 # initialize chat history
@@ -24,6 +26,7 @@ if uploaded_file is not None:
         temp.write(bytes_data)
         file_path = temp.name
     hash_value = hashlib.sha256(bytes_data).hexdigest()
+    retrieve.current_hash = hash_value
     result = vector_db.get(where={'source_hash': hash_value})
     if result['ids']:
         pass
