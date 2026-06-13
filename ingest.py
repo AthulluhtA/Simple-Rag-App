@@ -16,18 +16,20 @@ vector_db = Chroma(
     persist_directory='./langchain_vectordb',
 )
 
-def load_pdf(file_path: str) -> list[Document]:
+def load_pdf(file_path: str, hash_value) -> list[Document]:
     reader = pypdf.PdfReader(file_path)
     return [
         Document(
             page_content=page.extract_text() or "",
-            metadata={"source": file_path, "page": i}
+            metadata={"source": file_path, 
+                      'source_hash': hash_value,
+                      "page": i}
         )
         for i, page in enumerate(reader.pages)
     ]
 
-def ingest(file_path: str):
-    docs = load_pdf(file_path)
+def ingest(file_path, hash_value):
+    docs = load_pdf(file_path, hash_value)
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=200,
